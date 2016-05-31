@@ -1,0 +1,13 @@
+{
+  "uploadOnSave": true,
+  "deleteLocal": false,
+  "hostname": "ibuupl.vot.pl",
+  "target": "/domains/surprise.design/public_html/opennet/",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "ibuupl",
+  "password": "Surprise!((#1993",
+  "transport": "ftp"
+}
