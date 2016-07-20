@@ -5,7 +5,7 @@ require_once 'phpmailer/PHPMailerAutoload.php';
     $topic = $_POST[topic];
     $email = $_POST[email];
     $tresc =$_POST[tresc];
-
+    $file = $_POST[file];
    
     $mail = new PHPMailer();
     $mail->isSMTP();
@@ -19,6 +19,8 @@ require_once 'phpmailer/PHPMailerAutoload.php';
     $mail->AddAddress('biuro@opennet.pl'); 
     $mail->AddAddress('joanna.kawecka@projectmanager24.pl');
     $mail->Subject = 'Z strony wwww';
+    $mail->AddAttachment($file,$file);
+    $mail->CharSet = 'utf-8';
     $mail->Body = "Witaj,
     Nazwa: $name 
     Email: $email 
