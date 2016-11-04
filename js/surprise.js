@@ -16,6 +16,7 @@ $(document).ready(function() {
   	var name = $('#contact_name').val(),
   		topic = $('#contact_topic').val(),
   		email = $('#contact_email').val(),
+  		file = $('#file').val(),
   		tresc = $('#contact_text').val();
 
   	if(name == '' || topic == '' || email == '' || tresc == '') {
@@ -26,7 +27,7 @@ $(document).ready(function() {
   		$.ajax({
   			url: '/mail.php',
   			type: 'POST',
-  			data: {name: name, topic: topic, email: email, tresc: tresc },
+  			data: {name: name, topic: topic, email: email, tresc: tresc, file: file },
   		})
   		.done(function() {
   			console.log("success");
@@ -34,8 +35,8 @@ $(document).ready(function() {
   		.fail(function() {
   			console.log("error");
   		})
-  		.always(function() {
-  			console.log("complete");
+  		.always(function(data) {
+  			console.log("complete", data);
   		});
   		
   	}
