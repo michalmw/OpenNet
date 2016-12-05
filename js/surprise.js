@@ -11,6 +11,46 @@ $(document).ready(function() {
   });
 
 
+
+  $('#kariera').on('submit', function(e) {
+  	e.preventDefault();
+
+  	var name = $('#contact_name').val(),
+  		topic = $('#contact_topic').val(),
+  		email = $('#contact_email').val(),
+  		file = $('#file').val(),
+  		tresc = $('#contact_text').val();
+
+  	if(name == '' || topic == '' || email == '' || tresc == '') {
+  		$('#error').slideDown();
+  	} else {
+  		$('#error').slideUp();
+  		$('#alert').slideDown();
+  		$.ajax({
+  			url: '/mail.php',
+  			type: 'POST',
+  			data: new FormData(this),
+  			contentType: false,
+			// cache: false,
+			processData:false,
+  			// data: {name: name, topic: topic, email: email, tresc: tresc, file: file },
+  		})
+  		.done(function() {
+  			console.log("success");
+  		})
+  		.fail(function() {
+  			console.log("error");
+  		})
+  		.always(function(data) {
+  			console.log("complete", data);
+  		});
+  		
+  	}
+
+
+  });
+
+
   $('#send_mail').on('click', function() {
 
   	var name = $('#contact_name').val(),

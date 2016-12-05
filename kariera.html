@@ -162,26 +162,26 @@
             <hr>
           </div>
        
-        <form action="" style="padding-top: 15px;" enctype="multipart/form-data">
+        <form action="" id="kariera" name="kariera" style="padding-top: 15px;" enctype="multipart/form-data">
               <div class="form-group">
-                <input id="contact_name" type="text" placeholder="Imię i nazwisko" class="form-control">
+                <input id="contact_name" name="name" type="text" placeholder="Imię i nazwisko" class="form-control">
               </div>
               <div class="form-group">
-                <input id="contact_topic" type="text" placeholder="Stanowisko" class="form-control">
+                <input id="contact_topic" name="topic" type="text" placeholder="Stanowisko" class="form-control">
               </div>
               <div class="form-group">
-                <input  id="contact_email" type="text" placeholder="Email" class="form-control">
+                <input  id="contact_email" name="email" type="text" placeholder="Email" class="form-control">
               </div>
              
               <div class="form-group">
-                <textarea id="contact_text" placeholder="Treść wiadomości" class="form-control"></textarea>
+                <textarea id="contact_text" name="tresc" placeholder="Treść wiadomości" class="form-control"></textarea>
               </div>
               <div class="form-group">
                 <input type="file" name="file" id="file">
 
               </div>
               <div class="col-md-12 text-center">
-                <a id="send_mail" class="btn btn-success" >Wyślij</a>
+                <button  class="btn btn-success" >Wyślij</button>
                 <div id="alert" style="display: none; margin-top: 10px;" class="alert alert-success" role="alert">Dziękujemy, Twój mail został wysłany.</div>
                 <div style="display: none; margin-top: 10px;"  id="error" class="alert alert-danger" role="alert">Upss... Wszystkie pola musisz uzupełnić, jak chcesz wysłać do nas maila.</div>
               </div>
